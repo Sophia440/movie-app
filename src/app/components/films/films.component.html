@@ -1,0 +1,29 @@
+<main role="main">
+
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">Movie Gallery</h1>
+        <p class="lead text-muted">An educational Angular and Bootstrap project</p>
+        <p>
+          <app-add-film (addFilmItem)="addFilm($event)"></app-add-film>
+          <!-- <a href="#" class="btn btn-primary my-2">Add movie</a> -->
+          <a href="#" class="btn btn-secondary my-2" routerLink='/about'>About</a>
+        </p>
+      </div>
+    </section>
+  
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <!-- <div class="row"> -->
+          <div>
+            <app-film-item 
+                *ngFor="let filmArrayItem of films" 
+                [film]="filmArrayItem" 
+                (deleteFilmItem)="deleteFilm($event)">
+            </app-film-item>
+        </div>
+        <!-- </div> -->
+      </div>
+    </div>
+  
+</main>
